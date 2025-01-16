@@ -138,20 +138,19 @@
 %    \freefootnote{Sources: \url{https://github.com/kolosovpetro/github-latex-template}}
 
     \section{Introduction}\label{sec:introduction}
-    \input{sections/02_introduction}
+    \begin{align*}
+        \polynomialP{m}{b}{x} &= \sum_{r=0}^{m} \sum_{k=1}^{n} \coeffA{m}{r} k^r (n-k)^r \\
+        \polynomialQ{m}{b}{x} &= \sum_{r=0}^{m} \sum_{k=0}^{n-1} \coeffA{m}{r} k^r (n-k)^r
+    \end{align*}
 
-    \subsection{Polynomials Q(1,n,k)}\label{sec:polynomialsq1nk}
-    \input{sections/polynomials_q_1_n_k}
+    \subsection{Polynomials P(1,n,k)}\label{subsec:polynomialsp1nk}
+    \input{sections/01_polynomials_p_1_n_k}
 
-    \subsection{Polynomials P(1,n,k)}\label{sec:polynomialsp1nk}
-    \input{sections/polynomials_p_1_n_k}
+    \subsection{Polynomials Q(1,n,k)}\label{subsec:polynomialsq1nk}
+    \input{sections/02_polynomials_q_1_n_k}
 
-
-%    \section{Conclusions}\label{sec:conclusions}
-%    \input{sections/03_conclusions}
 
     \bibliographystyle{unsrt}
     \bibliography{PlotsOfClosedForms}
-    \noindent \textbf{Version:} \input{sections/version}
 
 \end{document}
