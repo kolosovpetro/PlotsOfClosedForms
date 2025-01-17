@@ -15,12 +15,12 @@ jobs:
     uses: kolosovpetro/github-latex-template/.github/workflows/build-and-deploy-pdf-template.yml@main
     secrets: inherit
     with:
-      file_name: 'GithubLatexTemplate'
+      file_name: 'PlotsOfClosedForms'
       runs_on: 'ubuntu-latest'
       workflow_name: 'Build and Deploy PDF'
       build_assets_path: |
-        src/GithubLatexTemplate.tex
-        src/GithubLatexTemplate.bbl
-        src/GithubLatexTemplate.bib
+        src/PlotsOfClosedForms.tex
+        src/PlotsOfClosedForms.bbl
+        src/PlotsOfClosedForms.bib
         src/sections
       working_directory_for_latex: 'src'

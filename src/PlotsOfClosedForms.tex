@@ -1,0 +1,179 @@
+%! suppress = MissingLabel
+\documentclass[12pt,letterpaper,oneside,reqno]{amsart}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{float}
+\usepackage{mathrsfs}
+\usepackage{colonequals}
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage[left=1in,right=1in,bottom=1in,top=1in]{geometry}
+\usepackage[pdfpagelabels,hyperindex,colorlinks=true,linkcolor=blue,urlcolor=magenta,citecolor=green]{hyperref}
+\usepackage{graphicx}
+\linespread{1.7}
+\emergencystretch=1em
+\usepackage{array}
+\usepackage{etoolbox}
+\apptocmd{\sloppy}{\hbadness 10000\relax}{}{}
+\raggedbottom
+
+\newcommand \anglePower [2]{\langle #1 \rangle \sp{#2}}
+\newcommand \bernoulli [2][B] {{#1}\sb{#2}}
+\newcommand \curvePower [2]{\{#1\}\sp{#2}}
+\newcommand \coeffA [3][A] {{\mathbf{#1}} \sb{#2,#3}}
+\newcommand \polynomialP [4][P]{{#1}(#2,#3,#4)}
+\newcommand \polynomialQ [4][Q]{{#1}(#2,#3,#4)}
+
+% ~~~ Rascal numbers ~~~
+%\newcommand \rascalNumber [3] {\binom{#1}{#2}_{#3}}
+%\newcommand \north[0] {\mathbf{North}}
+%\newcommand \south[0] {\mathbf{South}}
+%\newcommand \west[0] {\mathbf{West}}
+%\newcommand \east[0] {\mathbf{East}}
+
+% ~~~~ 1-q pascal notation~~~~
+%\newcommand{\genstirlingI}[3]{%
+%    \genfrac{[}{]}{0pt}{#1}{#2}{#3}%
+%}
+%\newcommand{\genstirlingII}[3]{%
+%    \genfrac{\{}{\}}{0pt}{#1}{#2}{#3}%
+%}
+%\newcommand{\oneQBinomial}[3]{\genstirlingI{}{#1}{#2}^{#3}}
+
+% free foot note
+%\let\svthefootnote\thefootnote
+%\newcommand\freefootnote[1]{%
+%    \let\thefootnote\relax%
+%    \footnotetext{#1}%
+%    \let\thefootnote\svthefootnote%
+%}
+
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{definition}[theorem]{Definition}
+
+%\numberwithin{equation}{section}
+
+\title[Plots of Closed Forms]
+{Plots of Closed Forms}
+\author[Petro Kolosov]{Petro Kolosov}
+%\address{Software Developer, DevOps Engineer}
+%\email{kolosovp94@gmail.com}
+%\urladdr{https://kolosovpetro.github.io}
+%\keywords{
+%    Binomial theorem,
+%    Binomial coefficients,
+%    Faulhaber's formula,
+%    Polynomials,
+%    Pascal's triangle
+%    Finite differences,
+%    Interpolation,
+%    Polynomial identities
+%}
+%\subjclass[2010]{26E70, 05A30}
+%\date{\today}
+\hypersetup{
+    pdftitle={LaTeX Template for Github},
+    pdfsubject={
+        Polynomials,
+        Finite differences,
+        Interpolation,
+        Approximation,
+        Polynomial identities,
+        Power sums,
+        Binomial theorem,
+        Power function,
+        Binomial coefficients,
+        Bernoulli numbers,
+        Pascal's triangle,
+        Faulhaber's formula,
+        Derivatives,
+        Differential calculus,
+        Partial differential equations,
+        OEIS,
+        Bernoulli polynomials,
+        Combinatorics,
+        Discrete convolution,
+        Dynamic systems,
+        Time scales
+    },
+    pdfauthor={Petro Kolosov},
+    pdfkeywords={
+        Polynomials,
+        Finite differences,
+        Interpolation,
+        Approximation,
+        Polynomial identities,
+        Power sums,
+        Binomial theorem,
+        Power function,
+        Binomial coefficients,
+        Bernoulli numbers,
+        Pascal's triangle,
+        Faulhaber's formula,
+        Derivatives,
+        Differential calculus,
+        Partial differential equations,
+        OEIS,
+        Bernoulli polynomials,
+        Combinatorics,
+        Discrete convolution,
+        Dynamic systems,
+        Time scales
+    }
+}
+\begin{document}
+%    \begin{abstract}
+%        \input{sections/01_abstract}
+%    \end{abstract}
+
+    \maketitle
+
+    \tableofcontents
+
+%    \freefootnote{Sources: \url{https://github.com/kolosovpetro/github-latex-template}}
+
+    \section{Introduction}\label{sec:introduction}
+    \begin{align*}
+        \polynomialP{m}{X}{N} &= \sum_{r=0}^{m} \sum_{k=1}^{N} \coeffA{m}{r} k^r (X-k)^r \\
+        \polynomialQ{m}{X}{N} &= \sum_{r=0}^{m} \sum_{k=0}^{N-1} \coeffA{m}{r} k^r (X-k)^r
+    \end{align*}
+
+    \begin{align*}
+        \polynomialP{m}{N}{N} &= N^{2m+1} \\
+        \polynomialQ{m}{N}{N} &= N^{2m+1} \\
+        \polynomialP{m}{N+1}{N} &= (N+1)^{2m+1} - 1 \quad \quad (verified) \\
+        \polynomialQ{m}{N-1}{N} &= (N-1)^{2m+1} + 1 \quad \quad (verified)
+    \end{align*}
+
+    \subsection{Polynomials P(1,n,k)}
+    \input{sections/01_polynomials_p_1_n_k}
+
+    \subsection{Polynomials P(1,n,k) example n = 6}
+    \input{sections/01_polynomials_p_1_example_for_m1_n6_with_table}
+
+    \subsection{Polynomials Q(1,n,k)}
+    \input{sections/02_polynomials_q_1_n_k}
+
+    \subsection{Polynomials P(2,n,k)}
+    \input{sections/03_polynomials_p_2_n_k}
+
+    \subsection{Polynomials Q(2,n,k)}
+    \input{sections/04_polynomials_q_2_n_k}
+
+    \subsection{Polynomials P(3,n,k)}
+    \input{sections/05_polynomials_p_3_n_k}
+
+    \subsection{Polynomials Q(3,n,k)}
+    \input{sections/06_polynomials_q_3_n_k}
+
+
+%    \bibliographystyle{unsrt}
+%    \bibliography{PlotsOfClosedForms}
+
+\end{document}
