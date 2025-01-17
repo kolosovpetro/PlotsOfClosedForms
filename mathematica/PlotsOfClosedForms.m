@@ -56,3 +56,6 @@ theorem[m_] := Expand[timeScaleDerivativeX[m, Global`x, sigma[Global`x]] + timeS
 End[ ]
 
 EndPackage[ ]
+
+
+
