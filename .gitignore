@@ -11,7 +11,7 @@
 *.cb
 *.cb2
 .*.lb
-*.txt
+prompts.txt
 
 ## Archives
 *.rar
