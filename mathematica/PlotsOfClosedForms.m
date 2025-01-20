@@ -10,6 +10,8 @@ Q::usage= "Q[m, x, b] returns the polynomial Q"
 Q1::usage= "Q1[m, x, b] returns the polynomial Q1"
 U::usage= "U[m, l, k] returns the polynomial U"
 V::usage= "V[m, l, k] returns the polynomial V"
+NSolveP::usage= "Returns solutions to the equation P - X^2m+1 == 0 for X"
+NSolveQ::usage= "Returns solutions to the equation Q - X^2m+1 == 0 for X"
 
 Begin["`Private`"]
 
@@ -28,6 +30,8 @@ Q[m_, X_, N_] := Expand[Sum[L[m, X, k], {k, 0, N-1}]];
 Q1[m_, X_, N_] := Expand[Sum[(-1)^(m-r) V[m, N, r] X^r, {r, 0, m}]];
 U[m_, l_, t_]:= Expand[(-1)^m Sum[Sum[Binomial[j, t] A[m, j] k^(2j-t) (-1)^j, {j, t, m}] ,{k, 1, l}]];
 V[m_, l_, t_]:= Expand[(-1)^m Sum[Sum[Binomial[j, t] A[m, j] k^(2j-t) (-1)^j, {j, t, m}] ,{k, 0, l-1}]];
+NSolveP[m_, X_, N_] := NSolve[P[m, X, N] - X^(2m+1) == 0, X];
+NSolveQ[m_, X_, N_] := NSolve[Q[m, X, N] - X^(2m+1) == 0, X];
 
 End[ ]
 
