@@ -74,6 +74,7 @@
 
 
     \section{Introduction}\label{sec:introduction}
+    Definitions
     \begin{align*}
         \polynomialP{m}{X}{N} &= \sum_{r=0}^{m} \sum_{k=1}^{N} \coeffA{m}{r} k^r (X-k)^r \\
         \polynomialP{m}{X}{N} &= \sum_{r=0}^{m} (-1)^{m-r} U(m, N, r) \cdot X^{r} \\
@@ -83,6 +84,7 @@
         V(m, l, t) &= (-1)^m \sum_{k=0}^{l-1}  \sum_{j=t}^{m} \binom{j}{t} \coeffA{m}{j} k^{2j-t} (-1)^j
     \end{align*}
 
+    Polynomial identities found
     \begin{align*}
         \polynomialP{m}{N}{N} &= N^{2m+1} \\
         \polynomialQ{m}{N}{N} &= N^{2m+1} \\
@@ -90,7 +92,44 @@
         \polynomialQ{m}{N-1}{N} &= (N-1)^{2m+1} + 1 \quad \quad (verified)
     \end{align*}
 
+    The function $U(m, N, r)$ rises as $O(N^{2m+1-r})$ having fixed values for $m$ and $r$
+    \begin{align*}
+        U(m, N, r) &= O(N^{2m+1-r}) \\
+        U(3, N, 1) &= 70 N^6+210 N^5+175 N^4-42 N^2-7 N
+    \end{align*}
+
+    The function $V(m, N, r)$ rises as $O(N^{2m+1-r})$ having fixed values for $m$ and $r$
+    \begin{align*}
+        V(m, N, r) &= O(N^{2m+1-r}) \\
+        V(3, N, 2) &= -14 N + 140 N^3 - 210 N^4 + 84 N^5
+    \end{align*}
+
+    About interval of convergence, we say that having fixed points $m$ and $N$,
+    the polynomial $\polynomialP{m}{X}{N}$ approximates odd power function $X^{2m+1}$ in some interval
+    of convergence $a_1 \leq N \leq b_1$.
+    For example,
+    \begin{align*}
+        \polynomialP{1}{X}{6} = 126X - 540
+    \end{align*}
+    so that it approximates odd power function $X^3$ in some neighborhood of point $X=6$, more precisely
+    $5.5 \leq X \leq 7.9$ with the maximal percentage error $8\%$.
+
+    Having $N=10$ the convergence interval with cubes in neighborhood of $X=10$ is: $8.9 \leq X \leq 13$
+    with maximal percentage error $E \leq 10\%$.
+
+    Having $N=70$ the convergence interval with cubes in neighborhood of $X=70$ is: $60.1 \leq X \leq 87.6$
+    with maximal percentage error $E \leq 10\%$.
+
+    Having $N=150$ the convergence interval with cubes in neighborhood of $X=150$ is: $128.4 \leq X \leq 187.1$
+    with maximal percentage error $E \leq 10\%$.
+    Within interval $142.5 \leq X \leq 159.9$ the maximal percentage error $E < 1\%$.
+
+    Which implies that convergence interval rises as $N$ rise.
+
+    Which makes the method quite fit for spline approximation.
+
     % P1
+    \clearpage
 
     \subsection{Polynomials P(1,X,N)}
     \input{sections/011_polynomials_p1}
