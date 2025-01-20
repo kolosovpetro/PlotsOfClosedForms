@@ -5,7 +5,9 @@ BeginPackage["GithubLatexTemplateMathematicaPackage`"]
 A::usage= "A[n, k] returns the real coefficient A of non-negative integers n, k such that n <= k."
 L::usage= "L[m, n, k] returns the polynomial L"
 P::usage= "P[m, x, b] returns the polynomial P"
+P1::usage= "P1[m, x, b] returns the polynomial P1"
 Q::usage= "Q[m, x, b] returns the polynomial Q"
+Q1::usage= "Q1[m, x, b] returns the polynomial Q1"
 U::usage= "U[m, l, k] returns the polynomial U"
 V::usage= "V[m, l, k] returns the polynomial V"
 
@@ -21,9 +23,11 @@ A[n_, k_] := (2n + 1) * Binomial[2n, n] /; k == n;
 
 L[m_, n_, k_] := Sum[A[m, r] * k^r * (n - k)^r, {r, 0, m}];
 P[m_, X_, N_] := Expand[Sum[L[m, X, k], {k, 1, N}]];
+P1[m_, X_, N_] := Expand[Sum[(-1)^(m-r) U[m, N, r] X^r, {r, 0, m}]];
 Q[m_, X_, N_] := Expand[Sum[L[m, X, k], {k, 0, N-1}]];
-U[m_,l_,t_]:=(-1)^m Sum[Sum[Binomial[j, t] A[m, j] k^(2j-t) (-1)^j, {j, t, m}] ,{k, 1, l}];
-V[m_,l_,t_]:=(-1)^m Sum[Sum[Binomial[j, t] A[m, j] k^(2j-t) (-1)^j, {j, t, m}] ,{k, 0, l-1}];
+Q1[m_, X_, N_] := Expand[Sum[(-1)^(m-r) V[m, N, r] X^r, {r, 0, m}]];
+U[m_, l_, t_]:= Expand[(-1)^m Sum[Sum[Binomial[j, t] A[m, j] k^(2j-t) (-1)^j, {j, t, m}] ,{k, 1, l}]];
+V[m_, l_, t_]:= Expand[(-1)^m Sum[Sum[Binomial[j, t] A[m, j] k^(2j-t) (-1)^j, {j, t, m}] ,{k, 0, l-1}]];
 
 End[ ]
 
