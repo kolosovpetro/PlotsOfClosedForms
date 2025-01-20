@@ -12,6 +12,7 @@ U::usage= "U[m, l, k] returns the polynomial U"
 V::usage= "V[m, l, k] returns the polynomial V"
 NSolveP::usage= "Returns solutions to the equation P - X^2m+1 == 0 for X"
 NSolveQ::usage= "Returns solutions to the equation Q - X^2m+1 == 0 for X"
+BinomialCoefficientAsPolynomial::usage= "Returns binomial coefficient in form of polynomial"
 
 Begin["`Private`"]
 
@@ -32,6 +33,7 @@ U[m_, l_, t_]:= Expand[(-1)^m Sum[Sum[Binomial[j, t] A[m, j] k^(2j-t) (-1)^j, {j
 V[m_, l_, t_]:= Expand[(-1)^m Sum[Sum[Binomial[j, t] A[m, j] k^(2j-t) (-1)^j, {j, t, m}] ,{k, 0, l-1}]];
 NSolveP[m_, X_, N_] := NSolve[P[m, X, N] - X^(2m+1) == 0, X];
 NSolveQ[m_, X_, N_] := NSolve[Q[m, X, N] - X^(2m+1) == 0, X];
+BinomialCoefficientAsPolynomial[N_, K_] := Expand[Product[(N-i)/K, {i, 0, K-1}]];
 
 End[ ]
 
