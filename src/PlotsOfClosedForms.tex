@@ -104,6 +104,12 @@
         V(3, N, 2) &= -14 N + 140 N^3 - 210 N^4 + 84 N^5
     \end{align*}
 
+    Error of approximation, fixed $m$ and $N$
+    \begin{align*}
+        E &= (X+1)^{2m+1} - \polynomialP{m}{X}{N} \\
+        E &= \sum_{k=0}^{N} \binom{N}{k} X^k - \polynomialP{m}{X}{N}
+    \end{align*}
+
     About interval of convergence, we say that having fixed points $m$ and $N$,
     the polynomial $\polynomialP{m}{X}{N}$ approximates odd power function $X^{2m+1}$ in some interval
     of convergence $a_1 \leq N \leq b_1$.
