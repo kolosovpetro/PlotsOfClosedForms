@@ -6,7 +6,6 @@
 \usepackage{amsthm}
 \usepackage{float}
 \usepackage{mathrsfs}
-\usepackage{colonequals}
 \usepackage[font=small,labelfont=bf]{caption}
 \usepackage[left=1in,right=1in,bottom=1in,top=1in]{geometry}
 \usepackage[pdfpagelabels,hyperindex,colorlinks=true,linkcolor=blue,urlcolor=magenta,citecolor=green]{hyperref}
@@ -25,31 +24,6 @@
 \newcommand \polynomialP [4][P]{{#1}(#2,#3,#4)}
 \newcommand \polynomialQ [4][Q]{{#1}(#2,#3,#4)}
 
-% ~~~ Rascal numbers ~~~
-%\newcommand \rascalNumber [3] {\binom{#1}{#2}_{#3}}
-%\newcommand \north[0] {\mathbf{North}}
-%\newcommand \south[0] {\mathbf{South}}
-%\newcommand \west[0] {\mathbf{West}}
-%\newcommand \east[0] {\mathbf{East}}
-
-% ~~~~ 1-q pascal notation~~~~
-%\newcommand{\genstirlingI}[3]{%
-%    \genfrac{[}{]}{0pt}{#1}{#2}{#3}%
-%}
-%\newcommand{\genstirlingII}[3]{%
-%    \genfrac{\{}{\}}{0pt}{#1}{#2}{#3}%
-%}
-%\newcommand{\oneQBinomial}[3]{\genstirlingI{}{#1}{#2}^{#3}}
-
-% free foot note
-%\let\svthefootnote\thefootnote
-%\newcommand\freefootnote[1]{%
-%    \let\thefootnote\relax%
-%    \footnotetext{#1}%
-%    \let\thefootnote\svthefootnote%
-%}
-
-
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{corollary}[theorem]{Corollary}
 \newtheorem{lemma}[theorem]{Lemma}
@@ -57,26 +31,9 @@
 \newtheorem{conjecture}[theorem]{Conjecture}
 \newtheorem{definition}[theorem]{Definition}
 
-%\numberwithin{equation}{section}
-
 \title[Plots of Closed Forms]
 {Plots of Closed Forms}
 \author[Petro Kolosov]{Petro Kolosov}
-%\address{Software Developer, DevOps Engineer}
-%\email{kolosovp94@gmail.com}
-%\urladdr{https://kolosovpetro.github.io}
-%\keywords{
-%    Binomial theorem,
-%    Binomial coefficients,
-%    Faulhaber's formula,
-%    Polynomials,
-%    Pascal's triangle
-%    Finite differences,
-%    Interpolation,
-%    Polynomial identities
-%}
-%\subjclass[2010]{26E70, 05A30}
-%\date{\today}
 \hypersetup{
     pdftitle={Plots of Closed Forms},
     pdfsubject={
@@ -91,16 +48,7 @@
         Binomial coefficients,
         Bernoulli numbers,
         Pascal's triangle,
-        Faulhaber's formula,
-        Derivatives,
-        Differential calculus,
-        Partial differential equations,
-        OEIS,
-        Bernoulli polynomials,
-        Combinatorics,
-        Discrete convolution,
-        Dynamic systems,
-        Time scales
+        Faulhaber's formula
     },
     pdfauthor={Petro Kolosov},
     pdfkeywords={
@@ -115,35 +63,24 @@
         Binomial coefficients,
         Bernoulli numbers,
         Pascal's triangle,
-        Faulhaber's formula,
-        Derivatives,
-        Differential calculus,
-        Partial differential equations,
-        OEIS,
-        Bernoulli polynomials,
-        Combinatorics,
-        Discrete convolution,
-        Dynamic systems,
-        Time scales
+        Faulhaber's formula
     }
 }
 \begin{document}
-%    \begin{abstract}
-%        \input{sections/01_abstract}
-%    \end{abstract}
 
     \maketitle
 
     \tableofcontents
 
-%    \freefootnote{Sources: \url{https://github.com/kolosovpetro/github-latex-template}}
 
     \section{Introduction}\label{sec:introduction}
     \begin{align*}
         \polynomialP{m}{X}{N} &= \sum_{r=0}^{m} \sum_{k=1}^{N} \coeffA{m}{r} k^r (X-k)^r \\
         \polynomialP{m}{X}{N} &= \sum_{r=0}^{m} (-1)^{m-r} U(m, N, r) \cdot X^{r} \\
         \polynomialQ{m}{X}{N} &= \sum_{r=0}^{m} \sum_{k=0}^{N-1} \coeffA{m}{r} k^r (X-k)^r \\
-        \polynomialQ{m}{X}{N} &= \sum_{r=0}^{m} (-1)^{m-r} V(m, N, r) \cdot X^{r}
+        \polynomialQ{m}{X}{N} &= \sum_{r=0}^{m} (-1)^{m-r} V(m, N, r) \cdot X^{r} \\
+        U(m, l, t) &= (-1)^m \sum_{k=1}^{l} \sum_{j=t}^{m} \binom{j}{t} \coeffA{m}{j} k^{2j-t} (-1)^j \\
+        V(m, l, t) &= (-1)^m \sum_{k=0}^{l-1}  \sum_{j=t}^{m} \binom{j}{t} \coeffA{m}{j} k^{2j-t} (-1)^j
     \end{align*}
 
     \begin{align*}
@@ -154,6 +91,7 @@
     \end{align*}
 
     % P1
+
     \subsection{Polynomials P(1,X,N)}
     \input{sections/011_polynomials_p1}
 
@@ -164,6 +102,7 @@
     \input{sections/013_polynomials_p1_n6_plot_with_cubes}
 
     % Q1
+
     \subsection{Polynomials Q(1,X,N)}
     \input{sections/021_polynomials_q1}
 
@@ -174,6 +113,7 @@
     \input{sections/023_polynomials_q1_n6_plot_with_cubes}
 
     % P2
+
     \subsection{Polynomials P(2,X,N)}
     \input{sections/031_polynomials_p2}
 
@@ -184,6 +124,7 @@
     \input{sections/033_polynomials_p2_n4_plot_with_fifth}
 
     % Q2
+
     \subsection{Polynomials Q(2,X,N)}
     \input{sections/041_polynomials_q2}
 
@@ -194,6 +135,7 @@
     \input{sections/043_polynomials_q2_n4_plot_with_fifth}
 
     % P3
+
     \subsection{Polynomials P(3,X,N)}
     \input{sections/051_polynomials_p3}
 
@@ -204,6 +146,7 @@
     \input{sections/053_polynomials_p3_n3_plot_with_seventh}
 
     % Q3
+
     \subsection{Polynomials Q(3,X,N)}
     \input{sections/061_polynomials_q3}
 
@@ -212,9 +155,5 @@
 
     \subsection{Polynomial Q(3,X,3) plot with seventh}
     \input{sections/063_polynomials_q3_n3_plot_with_seventh}
-
-
-%    \bibliographystyle{unsrt}
-%    \bibliography{PlotsOfClosedForms}
 
 \end{document}
