@@ -78,15 +78,17 @@
 
 
     \section{Introduction}\label{sec:introduction}
-    Definitions
-    \begin{align*}
-        \polynomialP{m}{X}{N} &= \sum_{r=0}^{m} \sum_{k=1}^{N} \coeffA{m}{r} k^r (X-k)^r \\
-        \polynomialP{m}{X}{N} &= \sum_{r=0}^{m} (-1)^{m-r} U(m, N, r) \cdot X^{r} \\
-        \polynomialQ{m}{X}{N} &= \sum_{r=0}^{m} \sum_{k=0}^{N-1} \coeffA{m}{r} k^r (X-k)^r \\
-        \polynomialQ{m}{X}{N} &= \sum_{r=0}^{m} (-1)^{m-r} V(m, N, r) \cdot X^{r} \\
-        U(m, l, t) &= (-1)^m \sum_{k=1}^{l} \sum_{j=t}^{m} \binom{j}{t} \coeffA{m}{j} k^{2j-t} (-1)^j \\
-        V(m, l, t) &= (-1)^m \sum_{k=0}^{l-1}  \sum_{j=t}^{m} \binom{j}{t} \coeffA{m}{j} k^{2j-t} (-1)^j
-    \end{align*}
+    \subsection{Definitions}
+    \input{sections/definitions}
+%    Definitions
+%    \begin{align*}
+%        \polynomialP{m}{X}{N} &= \sum_{r=0}^{m} \sum_{k=1}^{N} \coeffA{m}{r} k^r (X-k)^r \\
+%        \polynomialP{m}{X}{N} &= \sum_{r=0}^{m} (-1)^{m-r} U(m, N, r) \cdot X^{r} \\
+%        \polynomialQ{m}{X}{N} &= \sum_{r=0}^{m} \sum_{k=0}^{N-1} \coeffA{m}{r} k^r (X-k)^r \\
+%        \polynomialQ{m}{X}{N} &= \sum_{r=0}^{m} (-1)^{m-r} V(m, N, r) \cdot X^{r} \\
+%        U(m, l, t) &= (-1)^m \sum_{k=1}^{l} \sum_{j=t}^{m} \binom{j}{t} \coeffA{m}{j} k^{2j-t} (-1)^j \\
+%        V(m, l, t) &= (-1)^m \sum_{k=0}^{l-1}  \sum_{j=t}^{m} \binom{j}{t} \coeffA{m}{j} k^{2j-t} (-1)^j
+%    \end{align*}
 
     Polynomial identities found, these polynomial identities allow us to assume that $N-1, N, N+1$ interval
     has quite precise convergence.
@@ -205,5 +207,8 @@
 
     \subsection{Polynomial Q(3,X,3) plot with seventh}
     \input{sections/063_polynomials_q3_n3_plot_with_seventh}
+
+    \bibliographystyle{unsrt}
+    \bibliography{PlotsOfClosedForms}
 
 \end{document}

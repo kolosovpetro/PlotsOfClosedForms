@@ -1,48 +1,48 @@
 This is BibTeX, Version 0.99d
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: E:\RiderProjects\04_LATEX\PlotsOfClosedForms\out/PlotsOfClosedForms.aux
-I found no \citation commands---while reading file E:\RiderProjects\04_LATEX\PlotsOfClosedForms\out/PlotsOfClosedForms.aux
-I found no \bibdata command---while reading file E:\RiderProjects\04_LATEX\PlotsOfClosedForms\out/PlotsOfClosedForms.aux
-I found no \bibstyle command---while reading file E:\RiderProjects\04_LATEX\PlotsOfClosedForms\out/PlotsOfClosedForms.aux
-You've used 0 entries,
-            0 wiz_defined-function locations,
-            83 strings with 608 characters,
-and the built_in function-call counts, 0 in all, are:
-= -- 0
-> -- 0
-< -- 0
-+ -- 0
-- -- 0
-* -- 0
-:= -- 0
-add.period$ -- 0
-call.type$ -- 0
-change.case$ -- 0
+Reallocating 'name_of_file' (item size: 1) to 6 items.
+The style file: unsrt.bst
+Reallocating 'name_of_file' (item size: 1) to 19 items.
+Database file #1: PlotsOfClosedForms.bib
+You've used 6 entries,
+            1791 wiz_defined-function locations,
+            482 strings with 4702 characters,
+and the built_in function-call counts, 927 in all, are:
+= -- 81
+> -- 24
+< -- 1
++ -- 12
+- -- 6
+* -- 31
+:= -- 152
+add.period$ -- 20
+call.type$ -- 6
+change.case$ -- 5
 chr.to.int$ -- 0
-cite$ -- 0
-duplicate$ -- 0
-empty$ -- 0
-format.name$ -- 0
-if$ -- 0
+cite$ -- 6
+duplicate$ -- 42
+empty$ -- 112
+format.name$ -- 6
+if$ -- 208
 int.to.chr$ -- 0
-int.to.str$ -- 0
-missing$ -- 0
-newline$ -- 0
-num.names$ -- 0
-pop$ -- 0
-preamble$ -- 0
+int.to.str$ -- 6
+missing$ -- 4
+newline$ -- 35
+num.names$ -- 6
+pop$ -- 29
+preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 0
+skip$ -- 18
 stack$ -- 0
-substring$ -- 0
-swap$ -- 0
-text.length$ -- 0
+substring$ -- 25
+swap$ -- 7
+text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 0
-width$ -- 0
-write$ -- 0
-(There were 3 error messages)
+while$ -- 8
+width$ -- 7
+write$ -- 68
