@@ -34,4 +34,10 @@ Petro Kolosov.
 \newblock {\em {The Mathematical Gazette}}, 106(567):509--513, 2022.
 \newblock \url{https://doi.org/10.1017/mag.2022.129}.
 
+\bibitem{history_and_overview_of_polynomial_p}
+Petro Kolosov.
+\newblock {History and overview of the polynomial P(m,b,x)}, 2024.
+\newblock
+  \url{https://kolosovpetro.github.io/pdf/HistoryAndOverviewOfPolynomialP.pdf}.
+
 \end{thebibliography}
