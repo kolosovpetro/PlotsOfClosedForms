@@ -1,0 +1,52 @@
+﻿%\begin{align*}
+%    \polynomialP{m}{X}{N} &= \sum_{r=0}^{m} \sum_{k=1}^{N} \coeffA{m}{r} k^r (X-k)^r \\
+%    \polynomialP{m}{X}{N} &= \sum_{r=0}^{m} (-1)^{m-r} U(m, N, r) \cdot X^{r} \\
+%    \polynomialQ{m}{X}{N} &= \sum_{r=0}^{m} \sum_{k=0}^{N-1} \coeffA{m}{r} k^r (X-k)^r \\
+%    \polynomialQ{m}{X}{N} &= \sum_{r=0}^{m} (-1)^{m-r} V(m, N, r) \cdot X^{r} \\
+%    U(m, l, t) &= (-1)^m \sum_{k=1}^{l} \sum_{j=t}^{m} \binom{j}{t} \coeffA{m}{j} k^{2j-t} (-1)^j \\
+%    V(m, l, t) &= (-1)^m \sum_{k=0}^{l-1}  \sum_{j=t}^{m} \binom{j}{t} \coeffA{m}{j} k^{2j-t} (-1)^j
+%\end{align*}
+
+\begin{definition} (Polynomial P(m,X,N)).
+    \begin{align*}
+        P(m,X,N) = \sum_{r=0}^{m} \sum_{k=1}^{N} \coeffA{m}{r} k^r (X-k)^r
+    \end{align*}
+    fixed non-negative integers m and N\@.
+    For example
+\begin{align*}
+    \polynomialP{2}{X}{0} &= 0 \\
+    \polynomialP{2}{X}{1} &= 30X^2 - 60X + 31 \\
+    \polynomialP{2}{X}{2} &= 150X^2 - 540X + 512 \\
+    \polynomialP{2}{X}{3} &= 420X^2 - 2160X + 2943
+\end{align*}
+\end{definition}
+\begin{definition} (Definition of coefficient $\coeffA{m}{r}$.)
+    \begin{equation}
+        \label{eq:definition_coefficient_a}
+        \coeffA{m}{r} =
+        \begin{cases}
+        (2r+1)
+            \binom{2r}{r} & \mathrm{if} \; r=m \\
+            (2r+1) \binom{2r}{r} \sum_{d \geq 2r+1}^{m} \coeffA{m}{d} \binom{d}{2r+1} \frac{(-1)^{d-1}}{d-r}
+            \bernoulli{2d-2r} & \mathrm{if} \; 0 \leq r<m \\
+            0 & \mathrm{if} \; r<0 \; \mathrm{or} \; r>m
+        \end{cases}
+    \end{equation}
+\end{definition}
+where $\bernoulli{t}$ are Bernoulli numbers~\cite{bateman1953higher}.
+It is assumed that $\bernoulli{1}=\frac{1}{2}$.
+For example,
+\input{sections/figures/05_fig_coefficients_a}
+Properties of the coefficients $\coeffA{m}{r}$
+\begin{itemize}
+    \item $\coeffA{m}{m} = \binom{2m}{m}$
+    \item $\coeffA{m}{r} = 0$ for $m < 0$ and $r > m$
+    \item $\coeffA{m}{r} = 0$ for $r < 0$
+    \item $\coeffA{m}{r} = 0$ for $\frac{m}{2} \leq r < m$
+    \item $\coeffA{m}{0} = 1$ for $m \geq 0$
+    \item $\coeffA{m}{r}$ are integers for $m \leq 11$
+    \item Row sums: $\sum_{r=0}^{m} \coeffA{m}{r} = 2^{2m+1} - 1$
+\end{itemize}
+More detailed discussions about these coefficients at~\cite{alekseyev2018mathoverflow,
+    on_the_link_between_binomial_theorem_and_discrete_convolution, unusual_identity_for_odd_powers,
+    history_and_overview_of_polynomial_p}.
